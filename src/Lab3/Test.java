@@ -1,4 +1,4 @@
-package Lab1;
+package Lab3;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class Test {
         Scanner Input = new Scanner(System.in);
         System.out.print("Введите желаемое количество устройств: ");
         count = Input.nextInt();
-        Abstract_Personal_Device[] arrayDevice = new Abstract_Personal_Device[count];
+        Clean_Device_Decorator[] arrayDevice = new Clean_Device_Decorator[count];
 
         type = "Смартфон";
         String[] colors = new String[]{"Красный","Зеленый","Синий","Желтый","Черный","Белый"};
@@ -27,9 +27,9 @@ public class Test {
             typeScreen = typeScreens[(int)(Math.random()*typeScreens.length)];
             typeOS = typesOS[(int)(Math.random()*typesOS.length)];
 
-            arrayDevice[i] = new Android_Phone(dataRelease, type, color, screenResolution, typeScreen, typeOS);
+            arrayDevice[i] = new Clean_Device_Decorator(new Android_Phone(dataRelease, type, color, screenResolution, typeScreen, typeOS));
         }
-        // Цикл для вывода массива
+
         for(int i = 0; i < arrayDevice.length ; i++){
 
             System.out.println(arrayDevice[i].getDescription());

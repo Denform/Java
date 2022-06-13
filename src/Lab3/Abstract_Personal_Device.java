@@ -1,6 +1,6 @@
-package Lab1;
+package Lab3;
 
-public class Abstract_Personal_Device{
+public class Abstract_Personal_Device implements Show_Description {
 
     public int dataRelease;
     public String type, color;
@@ -31,7 +31,7 @@ public class Abstract_Personal_Device{
 
     public String getDescription(){
         String Description = "Класс, представляющий из себя персоональное устройство вышедшее в: " +
-                dataRelease +" году, цвет (" + color + ") и типом (" + type + "). \n";
+                dataRelease +" году, цвет ("+ color +") и типом ("+ type +"). \n";
         return Description;
     }
 
